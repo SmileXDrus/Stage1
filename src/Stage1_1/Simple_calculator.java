@@ -1,4 +1,4 @@
-package com.smilexdrus;
+package Stage1_1;
 
 public class Simple_calculator {
 
