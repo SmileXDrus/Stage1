@@ -1,9 +1,6 @@
 package com.smilexdrus;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,16 +10,17 @@ public class Main {
         boolean var_false = false;
         String str = "Hello world!";
 
-        firstExercise(str);
-        secondExercise(int_var, float_var);
-        thirdExercise(var_true, var_false);
-        fourthExercise();
-        fifthExercise(str);
-        sixthExercise(str);
-        seventhExercise();
+//        firstExercise(str);
+//        secondExercise(int_var, float_var);
+//        thirdExercise(var_true, var_false);
+//        fourthExercise();
+//        fifthExercise(str);
+//        sixthExercise(str);
+//        seventhExercise();
         eighthExercise();
-        System.out.println(ninthExercise());
+//        System.out.println(ninthExercise());
     }
+
     public static void firstExercise(String str){
         System.out.println("First exercise:");
         System.out.println(str);
@@ -37,6 +35,7 @@ public class Main {
         System.out.println("*: " + (int_var * float_var));
 
     }
+
     public static void thirdExercise(boolean var1, boolean var2) {
         System.out.println("Third exercise:");
         System.out.println("Логическое “не”(!): " + !var1);
@@ -46,6 +45,7 @@ public class Main {
         System.out.println("Условное И(&&): " + (var2 && var1));
         System.out.println("Условное ИЛИ(||): " + (var2 || var1));
     }
+
     public static void fourthExercise() {
         System.out.println("Fourth exercise:");
         int[] intArray = new int[30];
@@ -68,10 +68,7 @@ public class Main {
             System.out.print(" " + (int) aChar + "; ");
         }
     }
-    public static void eighthExercise() {
-        System.out.println("\nEighth exercise:");
-        System.out.println("\nBad news - It's empty. Plug");
-    }
+
     public static void sixthExercise(String str) {
         System.out.println("\nSixth exercise:");
         Map<Character, Integer> dict_1 = new HashMap<>();
@@ -94,9 +91,25 @@ public class Main {
 
     public static void seventhExercise() {
         System.out.println("\nSeventh exercise:");
-        for(int i = 100; i > 0; i--){
-            System.out.println(i + " бутылок стояло на столе, одна из них упала и разбилась.");
+        for (int i = 100; i > 1; i--) {
+            if (i % 10 == 1) {
+                System.out.println(i + " бутылка стояла на столе, одна из них упала и разбилась.");
+            } else if (i % 10 >= 2 && i % 10 <= 4 && (i % 100 < 10 || i % 100 >= 20)) {
+                System.out.println(i + " бутылки стояли на столе, одна из них упала и разбилась.");
+            } else {
+                System.out.println(i + " бутылок стояло на столе, одна из них упала и разбилась.");
+            }
         }
+        System.out.println("1 бутылка стояла на столе, она упала и разбилась.");
+    }
+
+    public static void eighthExercise() {
+        System.out.println("\nEighth exercise:");
+        String expr = input_in();
+//        String expr = "10*3+7+10/2";
+        String expr_new = Simple_calculator.putSpaceAfterSymbol(expr, ',');
+        Simple_calculator calculator = new Simple_calculator(expr_new);
+        System.out.println(expr + "=" + calculator.calculate());
     }
 
     public static Boolean ninthExercise() {
