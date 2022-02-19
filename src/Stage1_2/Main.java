@@ -4,22 +4,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.println("First ex:" + Fibonachi.exerciceFibonacci(inputIn()));
-        System.out.println("Second ex:");
-        TextRewriter.textRewriter();
-    }
-
-
-    public static int inputIn() {
         Scanner in = new Scanner(System.in);
         System.out.print("Input string: ");
-        String str_in = in.nextLine();
+        System.out.println("First ex:" + Fibonachi.exerciceFibonacci(convertToInt(in.nextLine())));
+        System.out.print("Second ex:");
+        TextRewriter.textRewriter(in.nextLine());
+
         in.close();
+    }
+
+    public static int convertToInt(String str) {
         try {
-            return Integer.parseInt(str_in);
+            return Integer.parseInt(str);
         } catch (NumberFormatException e) {
-            System.out.print("Введено не число, текст заменен на 0\n");
+            System.out.print("Введено не число\n");
         }
-        return 0;
+        return -1;
     }
 }

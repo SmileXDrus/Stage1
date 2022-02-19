@@ -17,23 +17,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TextRewriter {
-    public static void  textRewriter() {
-        String sentence = inputIn();
+    public static void  textRewriter(String sentence) {
         StringBuilder output = new StringBuilder();
         Pattern pattern = Pattern.compile("[a-zA-ZА-Яа-я-Ёё\\s*]");
         Matcher matcher = pattern.matcher(sentence);
-
         while(matcher.find()) {
             output.append(matcher.group());
         }
         System.out.println(output);
     }
 
-    public static String inputIn() {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Input string: ");
-        String str_in = in.nextLine();
-        in.close();
-        return  str_in;
-    }
 }

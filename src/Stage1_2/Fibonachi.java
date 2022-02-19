@@ -15,24 +15,30 @@ import java.util.ArrayList;
 // exercise: 0=-,1=0;2=1;3=1;4=2;5=3
 public class Fibonachi {
     public static ArrayList<BigInteger> exerciceFibonacci(int number_by_user) {
-        ArrayList<BigInteger> lst = new ArrayList(number_by_user);
-        BigInteger n1 = new BigInteger("0");
-        BigInteger n2 = new BigInteger("1");
-        if(number_by_user == 0) {
+        try {
+            ArrayList<BigInteger> lst = new ArrayList<>(number_by_user);
+
+            BigInteger n1 = new BigInteger("0");
+            BigInteger n2 = new BigInteger("1");
+            if(number_by_user == 0) {
+                return lst;
+            }
+            lst.add(n1);
+            if(number_by_user == 1) {
+                return lst;
+            }
+            lst.add(n2);
+            if(number_by_user == 2) {
+                return lst;
+            }
+            for (int i = 2; i < number_by_user; i++) {
+                lst.add(lst.get(i-2).add(lst.get(i-1)));
+            }
             return lst;
+        } catch (IllegalArgumentException e) {
+            System.out.println("Метод не сработал, неверный параметр: ");
+            return null;
         }
-        lst.add(n1);
-        if(number_by_user == 1) {
-            return lst;
-        }
-        lst.add(n2);
-        if(number_by_user == 2) {
-            return lst;
-        }
-        for (int i = 2; i < number_by_user; i++) {
-            lst.add(lst.get(i-2).add(lst.get(i-1)));
-        }
-        return lst;
     }
     public static int classicFibonacci(int n) {
         if(n == 0 || n == 1) {
