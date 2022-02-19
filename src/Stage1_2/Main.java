@@ -5,11 +5,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.print("Input string: ");
-        System.out.println("First ex:" + Fibonachi.exerciceFibonacci(convertToInt(in.nextLine())));
-        System.out.print("Second ex:");
-        TextRewriter.textRewriter(in.nextLine());
-
+//        System.out.print("Input string: ");
+//        System.out.println("First ex:" + Fibonachi.exerciceFibonacci(convertToInt(in.nextLine())));
+//        System.out.print("Second ex:");
+//        TextRewriter.textRewriter(in.nextLine());
+        System.out.println("Third ex: ");
+        CharReplacement.charRepl(in);
         in.close();
     }
 
