@@ -1,5 +1,7 @@
 package Stage1_2;
 
+import Stage1_2.TranslatorToModelClass.Sentence;
+
 import java.util.Scanner;
 
 public class Main {
@@ -11,8 +13,12 @@ public class Main {
 //        TextRewriter.textRewriter(in.nextLine());
 //        System.out.println("Third ex: ");
 //        CharReplacement.charRepl(in);
-
-        MaxMinWords.getMaxMinList(in.nextLine());
+//        MaxMinWords.getMaxMinList(in.nextLine());
+        Sentence sentence = new Sentence(in.nextLine().split(" "));
+//        System.out.println(sentence.getWordByPosition(0).getOriginalWord());
+//        System.out.println(sentence.getWordByPosition(0).getSymbolsCount());
+//        System.out.println(sentence.getWordsCount());
+        System.out.println("Модель создана!");
         in.close();
     }
 
