@@ -9,8 +9,10 @@ public class Main {
 //        System.out.println("First ex:" + Fibonachi.exerciceFibonacci(convertToInt(in.nextLine())));
 //        System.out.print("Second ex:");
 //        TextRewriter.textRewriter(in.nextLine());
-        System.out.println("Third ex: ");
-        CharReplacement.charRepl(in);
+//        System.out.println("Third ex: ");
+//        CharReplacement.charRepl(in);
+
+        MaxMinWords.getMaxMinList(in.nextLine());
         in.close();
     }
 
